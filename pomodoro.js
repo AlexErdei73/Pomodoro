@@ -30,13 +30,17 @@ function formatTime(time){
 
 function updateTime(){
     displaySecond--;
-    if (displaySecond == 0) {
-
+    if (displaySecond == 0) {//return displaySecond =0;
+         setClock(workMinutes * 60);
     }
     formatTime(displaySecond);
 }
 
+function setClock(time) {
+    displaySecond = time;
+    
+}
+
 displaySecond = 60 * workMinutes;
 formatTime(displaySecond);
-setInterval(updateTime, 100);
-
+setInterval(updateTime, 1);
