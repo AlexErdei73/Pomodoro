@@ -1,89 +1,70 @@
 <!doctype html>
-!doctype html>
 
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-
-  <title>The HTML5 Herald</title>
-  <meta name="description" content="The HTML5 Herald">
-  <meta name="author" content="SitePoint">
-<style>
-   body{
-    background-color: rgb(44, 211, 211);
-    background-color: rgb(127, 255, 206);
-  }
-  h1{
-    text-align: center;
-  }
-  .container{
-    width: 300px;
-    margin: auto;
-    height: 300px;
-    border: 1px solid black;
-    text-align: center;
-  }
-  .buttons{
-      display: block;
-      width: 45px;
-      height: 30px;
-      border: 1px solid black;
-      float: left;
-  }
-  .miniDisplay{
-     display:block;
-     width: 50px;
-     height: 30px;
-     border: 1px solid black;
-     float: left;
-  }
-  .display{
-      display: block;
-      width: 290px;
-      height: 30px;
-      border: 1px solid black;
-      float: left;
-      margin-top: 50px;
-      margin-bottom: 50px;
-  }
-  #setTime{
-      display: inline;
-      float: left;
-  }
-  #setBreak{
-    display: inline;
-      float: left;
-  } 
-  .control{
-    margin: 20px;
-  }
-</style>
-</head>
-
-
-<body>
-    <h1> Pomodoro clock </h1>
+  <head>
+    <meta charset="utf-8">
+    <title>pomodoro-clock</title>
+    <style>
+      body{
+        background-color: rgb(127, 255, 206);
+      }
+      h1{
+        text-align: center;
+      }
+      .container{
+        width: 300px;
+        margin: auto;
+        height: 300px;
+        border: 1px solid black;
+        text-align: center;
+      }
+      .buttons{
+        display: block;
+        width: 45px;
+        height: 30px;
+        border: 1px solid black;
+        float: left;
+      }
+      .miniDisplay{
+        display:block;
+        width: 50px;
+        height: 30px;
+        border: 1px solid black;
+        float: left;
+      }
+      .display{
+        display: block;
+        width: 290px;
+        height: 30px;
+        border: 1px solid black;
+        float: left;
+        margin-top: 50px;
+        margin-bottom: 50px;
+      }
+      .control{
+        margin: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Pomodoro Clock</h1>
     <div class="container">
-       
        <div id= "checks"></div>
     
-       <div class ="buttons" id="plusNormalTime">+</div>
-       <div class="miniDisplay"id="setTime">25</div>
-       <div class ="buttons" id ="minusNormalTime">-</div>
+       <div class="buttons" id="plusNormalTime">+</div>
+       <div class="miniDisplay" id="setTime">25</div>
+       <div class="buttons" id="minusNormalTime">-</div>
     
-       <div class ="buttons" id="plusBreakTime">+</div>
+       <div class="buttons" id="plusBreakTime">+</div>
        <div class="miniDisplay" id="setBreak">05</div>
-       <div class ="buttons" id ="minusBreakTime">-</div> 
-       <div class = "display">19:20</div>
-       <div class ="buttons control" id="start">start</div>
-       <div class ="buttons control" id="pause">pause</div>
-       <div class ="buttons control" id="reset">reset</div>
-       
-       
-       
-      
+       <div class="buttons" id="minusBreakTime">-</div> 
+
+       <div class= "display">19:20</div>
+
+       <div class="buttons control" id="start">start</div>
+       <div class="buttons control" id="pause">pause</div>
+       <div class="buttons control" id="reset">reset</div>
     </div>
-  <script src="pomodoro.js"></script>
-  <script src="js/scripts.js"></script>
-</body>
+    <script src="pomodoro.js"></script>
+  </body>
 </html>
