@@ -1,6 +1,8 @@
 let displaySecond = 0;
 let workMinutes = 25;
 let brakeMinutes = 5;
+let IsBrakeTime = false;
+let counter = 1;
 
 
 function convertToString(number){
@@ -31,15 +33,29 @@ function formatTime(time){
 function updateTime(){
     displaySecond--;
     if (displaySecond == 0) {//return displaySecond =0;
-         setClock(workMinutes * 60);
+         IsBrakeTime = toggleWorkAndBrake(IsBrakeTime);
+         tickCounter(counter);
     }
     formatTime(displaySecond);
 }
 
-function setClock(time) {
-    displaySecond = time;
-    
+function setClock(minutes) {
+    return minutes * 60;
 }
+
+function toggleWorkAndBrake({isBrake: indicator,time: seconds}){
+    if (!indicator) {
+        displaySecond = setClock(workMinutes);
+    } else {
+        displaySecond = setClock(brakeMinutes);
+    }
+    return !indicator;
+}
+
+function tickCounter(number){
+    number++;
+}
+
 
 displaySecond = 60 * workMinutes;
 formatTime(displaySecond);
