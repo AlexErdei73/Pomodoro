@@ -1,6 +1,9 @@
 let displaySecond = 0;
-let workMinutes = 25;
+let workMinutes = 10;
 let brakeMinutes = 5;
+let count = 1;
+let isBrakeSession = false;
+const LONG_BRAKE = 30;
 
 
 function convertToString(number){
@@ -28,10 +31,32 @@ function formatTime(second){
     
 }
 
+//count sessions and give back the right number of minutes for brake and work
+function switchToNextSession(){
+    let second = 0;
+    
+    isBrakeSession = !isBrakeSession;
+    if(count ==3 && isBrakeSession){
+         second = setClock(LONG_BRAKE);
+         count = 1;
+         return second;
+    } 
+    else {
+        if (isBrakeSession) {
+            count = count + 1;
+            second = setClock(brakeMinutes);
+        } else {
+            second = setClock(workMinutes);
+        }
+        return second;
+    }   
+}
+
 function updateTime(){
     displaySecond--;
     if (displaySecond == 0) {
-         displaySecond = setClock(workMinutes);
+         displaySecond = switchToNextSession(); //count sessions and give back the right number of 
+                                                //minutes for brake and work
     }
     formatTime(displaySecond);
 }
@@ -41,6 +66,31 @@ function setClock(minutes) {
     return second;
 }
 
+function onBtnControlPress(){
+    console.log('control button');
+}
+
+function onBtnSetPress(){
+    console.log('set button');
+}
+
+function onClick (e){
+console.log(buttons .className)
+    
+
+   //const button = e.traget;
+   //console.log(button )
+   /*Array.of(button).some(btnClass =>{ 
+         if (btnClass.classList.contains("control")){
+             onBtnControlPress()
+
+        }
+    })*/
+}
+
 displaySecond =  setClock(workMinutes);
 formatTime(displaySecond);
 setInterval(updateTime, 1);
+
+const buttons = document.querySelectorAll('.button');
+buttons.forEach(button => button.addEventListener('click', onClick));
