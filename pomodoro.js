@@ -31,7 +31,7 @@ function formatTime(second){
 function updateTime(){
     displaySecond--;
     if (displaySecond == 0) {
-         setClock(workMinutes);
+         displaySecond = setClock(workMinutes);
     }
     formatTime(displaySecond);
 }
