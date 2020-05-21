@@ -1,11 +1,3 @@
-let displaySecond = 0;
-let workMinutes = 10;
-let brakeMinutes = 5;
-let count = 1;
-let isBrakeSession = false;
-const LONG_BRAKE = 30;
-
-
 function convertToString(number){
     let dString = '';
     dString = number.toString();
@@ -114,8 +106,15 @@ function onClick (e){
     }   
 }
 
-
+//main program
+let displaySecond = 0;
+let workMinutes = 25;
+let brakeMinutes = 5;
+let count = 1;
+let isBrakeSession = false;
+const LONG_BRAKE = 30;
 let timer;
+
 btnResetPress();
 
 const buttons = document.querySelectorAll('.button');
