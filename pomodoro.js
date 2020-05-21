@@ -35,9 +35,10 @@ function switchToNextSession(){
     } 
     else {
         if (isBrakeSession) {
-            count = count + 1;
             second = setClock(brakeMinutes);
+            console.log(isBrakeSession);
         } else {
+            count = count + 1;
             second = setClock(workMinutes);
         }
         return second;
@@ -74,9 +75,10 @@ function btnStopPress(){
 
 function btnResetPress(){
     console.log("reset");
+    isBrakeSession = false;
     displaySecond =  setClock(workMinutes);
     formatTime(displaySecond);
-    isBrakeTime = false;
+    
     count = 1;
 }
 
