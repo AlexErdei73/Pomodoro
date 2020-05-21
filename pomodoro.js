@@ -103,6 +103,7 @@ function onBtnSetPress(e){
         case "plusNormalTime": 
             workMinutes = workMinutes + 1;
             miniDisplayWork.textContent = workMinutes;
+            
             break;
         case "minusNormalTime":
             workMinutes = workMinutes - 1;
@@ -117,6 +118,7 @@ function onBtnSetPress(e){
             miniDisplayBreak.textContent = breakMinutes;
             break;
     }
+    btnResetPress();
 }
 
 function onClick (e){
