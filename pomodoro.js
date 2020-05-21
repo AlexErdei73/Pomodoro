@@ -28,14 +28,14 @@ function switchToNextSession(){
     let second = 0;
     
     isBrakeSession = !isBrakeSession;
-    if(count ==4 && isBrakeSession){
+    if(count == 4 && isBrakeSession){
          second = setClock(LONG_BRAKE);
          count = 1;
          return second;
     } 
     else {
         if (isBrakeSession) {
-            second = setClock(brakeMinutes);
+            second = setClock(breakMinutes);
             console.log(isBrakeSession);
         } else {
             count = count + 1;
@@ -74,11 +74,9 @@ function btnStopPress(){
 }
 
 function btnResetPress(){
-    console.log("reset");
     isBrakeSession = false;
     displaySecond =  setClock(workMinutes);
     formatTime(displaySecond);
-    
     count = 1;
 }
 
@@ -98,7 +96,27 @@ function onBtnControlPress(e){
 }
 
 function onBtnSetPress(e){
-    console.log('set button');
+    const id = e.target.id;
+    const miniDisplayBreak = document.getElementById("setBreak");
+    const miniDisplayWork = document.getElementById("setTime");
+    switch(id){
+        case "plusNormalTime": 
+            workMinutes = workMinutes + 1;
+            miniDisplayWork.textContent = workMinutes;
+            break;
+        case "minusNormalTime":
+            workMinutes = workMinutes - 1;
+            miniDisplayWork.textContent = workMinutes;
+            break;
+        case "plusBreakTime":
+            breakMinutes = breakMinutes + 1;
+            miniDisplayBreak.textContent = breakMinutes;
+            break;
+        case "minusBreakTime":
+            breakMinutes = breakMinutes - 1;
+            miniDisplayBreak.textContent = breakMinutes;
+            break;
+    }
 }
 
 function onClick (e){
@@ -113,7 +131,7 @@ function onClick (e){
 //main program
 let displaySecond = 0;
 let workMinutes = 25;
-let brakeMinutes = 5;
+let breakMinutes = 5;
 let count = 1;
 let isBrakeSession = false;
 const LONG_BRAKE = 30;
