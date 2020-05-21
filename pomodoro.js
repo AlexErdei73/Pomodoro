@@ -65,32 +65,58 @@ function setClock(minutes) {
     const second = 60 * minutes;
     return second;
 }
+ 
 
-function onBtnControlPress(){
-    console.log('control button');
+function btnStartPress(){
+    console.log("start");
+    if (!timer) {
+        timer = setInterval(updateTime, 1);
+    } 
 }
 
-function onBtnSetPress(){
+function btnStopPress(){
+    console.log("stop");
+    clearInterval(timer);
+    timer = undefined;
+}
+
+function btnResetPress(){
+    console.log("reset");
+    displaySecond =  setClock(workMinutes);
+    formatTime(displaySecond);
+}
+
+function onBtnControlPress(e){
+    const id = e.target.id;
+    switch(id){
+        case "start":
+            btnStartPress();
+            break;
+        case "stop":
+            btnStopPress();
+            break;
+        case "reset":
+            btnResetPress()
+            break;
+    }
+}
+
+function onBtnSetPress(e){
     console.log('set button');
 }
 
 function onClick (e){
-console.log(buttons .className)
-    
-
-   //const button = e.traget;
-   //console.log(button )
-   /*Array.of(button).some(btnClass =>{ 
-         if (btnClass.classList.contains("control")){
-             onBtnControlPress()
-
-        }
-    })*/
+    if (e.target.className == "button control"){
+    onBtnControlPress(e)
+    } 
+    else{
+    onBtnSetPress(e)
+    }   
 }
 
-displaySecond =  setClock(workMinutes);
-formatTime(displaySecond);
-setInterval(updateTime, 1);
+
+let timer;
+btnResetPress();
 
 const buttons = document.querySelectorAll('.button');
 buttons.forEach(button => button.addEventListener('click', onClick));
