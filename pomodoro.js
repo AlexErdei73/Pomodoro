@@ -28,7 +28,7 @@ function switchToNextSession(){
     let second = 0;
     
     isBrakeSession = !isBrakeSession;
-    if(count ==3 && isBrakeSession){
+    if(count ==4 && isBrakeSession){
          second = setClock(LONG_BRAKE);
          count = 1;
          return second;
@@ -76,6 +76,8 @@ function btnResetPress(){
     console.log("reset");
     displaySecond =  setClock(workMinutes);
     formatTime(displaySecond);
+    isBrakeTime = false;
+    count = 1;
 }
 
 function onBtnControlPress(e){
