@@ -94,17 +94,22 @@ function onBtnControlPress(e){
             break;
     }
 }
-function timeLimiter(id, workOrBreak, plusOrMinus){
+function timeLimiter(workOrBreak, plusOrMinus){
     const miniDisplayBreak = document.getElementById("setBreak");
     const miniDisplayWork = document.getElementById("setTime");
     if (workOrBreak == 99 && plusOrMinus > 0){
-        return
+        return workOrBreak;
     }
         else if (workOrBreak == 0 && plusOrMinus < 0) {
-            return
+            return workOrBreak;
         } else {
             workOrBreak = workOrBreak + plusOrMinus;
-            miniDisplayWork.textContent = workOrBreak;
+            if (!isBrakeSession) {
+                miniDisplayWork.textContent = workOrBreak;
+            } else {
+                miniDisplayBreak.textContent = workOrBreak;
+            }
+            return workOrBreak;
         }
 }
 
@@ -112,16 +117,16 @@ function onBtnSetPress(e){
     const id = e.target.id;
     switch(id){
         case "plusNormalTime": 
-            timeLimiter(workMinutes, 1)
+            workMinutes = timeLimiter(workMinutes , 1);
             break;
         case "minusNormalTime":
-            timeLimiter(workMinutes, -1)
+            workMinutes = timeLimiter(workMinutes , -1);
             break;
         case "plusBreakTime":
-            timeLimiter(breakMinutes, 1)
+            breakMinutes = timeLimiter(breakMinutes , 1);
             break;
         case "minusBreakTime":
-            timeLimiter(breakMinutes, -1)
+            breakMinutes = timeLimiter(breakMinutes , -1);
             break;
     }
     btnResetPress();
