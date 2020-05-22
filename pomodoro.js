@@ -94,28 +94,34 @@ function onBtnControlPress(e){
             break;
     }
 }
+function timeLimiter(id, workOrBreak, plusOrMinus){
+    const miniDisplayBreak = document.getElementById("setBreak");
+    const miniDisplayWork = document.getElementById("setTime");
+    if (workOrBreak == 99 && plusOrMinus > 0){
+        return
+    }
+        else if (workOrBreak == 0 && plusOrMinus < 0) {
+            return
+        } else {
+            workOrBreak = workOrBreak + plusOrMinus;
+            miniDisplayWork.textContent = workOrBreak;
+        }
+}
 
 function onBtnSetPress(e){
     const id = e.target.id;
-    const miniDisplayBreak = document.getElementById("setBreak");
-    const miniDisplayWork = document.getElementById("setTime");
     switch(id){
         case "plusNormalTime": 
-            workMinutes = workMinutes + 1;
-            miniDisplayWork.textContent = workMinutes;
-            
+            timeLimiter(workMinutes, 1)
             break;
         case "minusNormalTime":
-            workMinutes = workMinutes - 1;
-            miniDisplayWork.textContent = workMinutes;
+            timeLimiter(workMinutes, -1)
             break;
         case "plusBreakTime":
-            breakMinutes = breakMinutes + 1;
-            miniDisplayBreak.textContent = breakMinutes;
+            timeLimiter(breakMinutes, 1)
             break;
         case "minusBreakTime":
-            breakMinutes = breakMinutes - 1;
-            miniDisplayBreak.textContent = breakMinutes;
+            timeLimiter(breakMinutes, -1)
             break;
     }
     btnResetPress();
