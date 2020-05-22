@@ -94,39 +94,34 @@ function onBtnControlPress(e){
             break;
     }
 }
-function timeLimiter(workOrBreak, plusOrMinus){
-    const miniDisplayBreak = document.getElementById("setBreak");
-    const miniDisplayWork = document.getElementById("setTime");
-    if (workOrBreak == 99 && plusOrMinus > 0){
-        return workOrBreak;
-    }
-        else if (workOrBreak == 0 && plusOrMinus < 0) {
-            return workOrBreak;
-        } else {
-            workOrBreak = workOrBreak + plusOrMinus;
-            if (!isBrakeSession) {
-                miniDisplayWork.textContent = workOrBreak;
-            } else {
-                miniDisplayBreak.textContent = workOrBreak;
-            }
-            return workOrBreak;
+//check for the given minute 
+//if we may increment it then update minidisplay
+function incrementTime(minute, increment, display){
+    if (!(minute == 99 && increment > 0) && !(minute == 0 && increment < 0)){
+                
+                minute = minute + increment;
+                
+                display.textContent = convertToString(minute)
         }
+    return minute;
 }
 
 function onBtnSetPress(e){
     const id = e.target.id;
+    const miniDisplayBreak = document.getElementById("setBreak");
+    const miniDisplayWork = document.getElementById("setTime");
     switch(id){
         case "plusNormalTime": 
-            workMinutes = timeLimiter(workMinutes , 1);
+            workMinutes = incrementTime(workMinutes , 1, miniDisplayWork);
             break;
         case "minusNormalTime":
-            workMinutes = timeLimiter(workMinutes , -1);
+            workMinutes = incrementTime(workMinutes , -1, miniDisplayWork);
             break;
         case "plusBreakTime":
-            breakMinutes = timeLimiter(breakMinutes , 1);
+            breakMinutes = incrementTime(breakMinutes , 1, miniDisplayBreak);
             break;
         case "minusBreakTime":
-            breakMinutes = timeLimiter(breakMinutes , -1);
+            breakMinutes = incrementTime(breakMinutes , -1, miniDisplayBreak);
             break;
     }
     btnResetPress();
