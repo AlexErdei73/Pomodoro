@@ -6,92 +6,213 @@
     <title>pomodoro-clock</title>
     <style>
       body{
+        background: url("alarmclock.jpg")repeat-y center center fixed;
+        background-size: cover;
         background-color: rgb(127, 255, 206);
-        background-image: url("background.jpg");
-        background-size: 100%;
       }
       h1{
         text-align: center;
-
+        color: rgb(124, 106, 0);
+        text-shadow: 2px 2px black;
       }
       .container{
         background-color: black;
         color:  white ;
-        width: 500px;
+        width: 495px;
         margin: auto;
-        height: 500px;
+        height: 100px;
         border: 1px solid white;
         text-align: center;
+        box-shadow: 5px 5px rgb(124, 106, 0);
+        border-radius: 5px;
+        float: left;
+        clear: right;
       }
       .button{
-        color: lime;
+        color: darkred;
         font-size: 135%;
         display: block;
         width: 50px;
-        height: 30px;
-        border: 1px solid white;  
+        height: 50px;
+        margin: 10px;
+        margin-top: 20px;
+        margin-left: 5px;
+        border: 1px solid darkred;  
         float: left;
         text-align: center;
-
+        line-height: 50px;
+        box-shadow: 5px 5px darkred;
+        border-radius: 5px;
+      }
+      .button:hover{
+        color: red;
+        border-color: red;
+        box-shadow: 5px 5px red;
       }
       .miniDisplay{
-        color: lime;
+        color: red;
         font-size: 150%;
-        display:block;
-        width: 144px;
-        height: 30px;
-        border: 1px solid white;
+        display: block;
+        width: 100px;
+        height: 50px;
+        border: 1px solid red;
+        margin-top: 25px;
+        line-height: 50px;
         float: left;
       }
       .display{
         font-size: 280%;
-        
         display: block;
-        width: 490px;
+        width: 400px;
         height: 60px;
-        color: lime;
-        border: 1px solid white;
+        color: red;
+        border: 1px solid red;
         float: left;
-        margin-left: 4px;
-        margin-top: 100px;
-        margin-bottom: 100px;
+        line-height: 60px;
+        margin-left: 40px;
+        margin-top: 20px;
       }
       .control{
-        margin: 40px;
-        margin-left: 65px;
+        width: 100px;
+        margin: 30px;
+        margin-top: 20px;
+        line-height: 50px;
+        color: green;
+        border-color: green;
+        box-shadow: 5px 5px green;
       }
-      .sign{
-        height: 70%;
-        width: 50%;
-        margin-top: 10%;
-        
+      .control:hover{
+        color: lime;
+        border-color: lime;
+        box-shadow:5px 5px lime;
       }
-      .control{
-        background-color: white;
-        height: 10%;
+      #plusBreakTime{
+        color: grey;
+        border-color: gray;
+        box-shadow: 5px 5px gray;
       }
-      
+      #plusBreakTime:hover{
+        color: white;
+        border-color: white;
+        box-shadow: 5px 5px white;
+      }
+      #minusBreakTime{
+        color: grey;
+        border-color: gray;
+        box-shadow: 5px 5px gray;
+      }
+      #minusBreakTime:hover{
+        color: white;
+        border-color: white;
+        box-shadow: 5px 5px white;
+      }
+      #setBreak{
+        color: white;
+        border-color: white;
+      }
+      #plusNormalTime {
+        margin-left: 15px;
+      }
+      .transparent{
+        display: block;
+        width: 495px;
+        height: 30px;
+        background: transparent;
+        margin: auto;
+        float: left;
+        clear: right;
+      }
+      p {
+        display: block;
+        max-width: 500px;
+        margin: 30px 80px;
+        margin-left: 0;
+        font-size: x-large;
+        float: right;
+        text-shadow: 1px 1px white;
+      }
+      .main {
+        display: block;
+        width: 497px;
+        margin: 10px 100px;
+        float: inline-end;
+      }
+      ol {
+        display: block;
+        max-width: 850px;
+        float: right;
+        font-size: x-large;
+        margin: 30px 60px;
+        text-shadow: 1px 1px white;
+      }
+      footer {
+        display: block;
+        width: 100%;
+        font-size: x-large;
+        clear: right;
+        text-shadow: 1px 1px white;
+      }
+      a {
+        color: darkred;
+        text-decoration: none;
+      }
+      a:hover{
+        color: red;
+      }
+      .left {
+        border: 1px solid black;
+        float: left;
+      }
+      .right {
+        margin: 0 20px;
+        float: right;
+      }
     </style>
   </head>
   <body>
     <h1>Pomodoro Clock</h1>
-    <div class="container">
-       <div id= "checks"></div>
-    
-       <div class="button" id="plusNormalTime"><img  class ="sign" src="plus.png" alt="Plus"></div>
-       <div class="miniDisplay" id="setTime">25</div>
-       <div class="button" id="minusNormalTime"><img  class ="sign" src="minus.png" alt="Minus"></div>
-    
-       <div class="button" id="plusBreakTime"><img  class ="sign" src="plus.png" alt="Plus"></div>
-       <div class="miniDisplay" id="setBreak">05</div>
-       <div class="button" id="minusBreakTime"><img  class ="sign" src="minus.png" alt="minus"></div> 
-
-       <div class= "display">19:20</div>
-
-       <div class="button control" id="start"><img  id ="start" src="play.png" alt="play"></div>
-       <div class="button control" id="stop"><img  id = "stop" src="pause.png" alt="stop"></div>
-       <div class="button control" id="reset"><img  id = "reset" src="stop.png" alt="reset"></div>
+    <p>
+      The Pomodoro Technique is a time management method developed by Francesco Cirillo in the late 1980s. 
+      The technique uses a timer to break down work into intervals, traditionally 25 minutes in length,
+      separated by short breaks. Each interval is known as a pomodoro, from the Italian word for 'tomato',
+      after the tomato-shaped kitchen timer that Cirillo used as a university student.
+    </p>
+    <div class="main">
+      <div class="container">
+        <div class="button" id="plusNormalTime">></div>
+        <div class="miniDisplay" id="setTime">25</div>
+        <div class="button" id="minusNormalTime"><</div>
+     
+        <div class="button" id="plusBreakTime">></div>
+        <div class="miniDisplay" id="setBreak">05</div>
+        <div class="button" id="minusBreakTime"><</div> 
+      </div>
+      <div class="transparent"></div>
+      <div class="container">
+        <div class= "display">19:20</div>
+      </div>
+      <div class="transparent"></div>
+      <div class="container">   
+        <div class="button control" id="start">Start</div>
+        <div class="button control" id="stop">Stop</div>
+        <div class="button control" id="reset">Reset</div>
+      </div>
     </div>
+    <ol>
+      <li>Decide on the task to be done.</li>
+      <li>Set the pomodoro timer (traditionally to 25 minutes).</li>
+      <li>Work on the task.</li>
+      <li>End work when the timer rings and put a checkmark on a piece of paper.</li>
+      <li>If you have fewer than four checkmarks, take a short break (3–5 minutes), then go to step 2.</li>
+      <li>After four pomodoros, take a longer break (15–30 minutes), reset your checkmark count to zero, then go to step 1.</li>
+    </ol>
+    <footer>
+      <div class="right">
+        More information: <a href="https://en.wikipedia.org/wiki/Pomodoro_Technique">Wikipedia</a> and
+        <a href="https://www.theodinproject.com/courses/web-development-101/lessons/pairing-project">Odin Project</a>
+      </div>
+      <div class="left">By Phankthusar and AlexErdei73</div>
+    </footer>
     <script src="pomodoro.js"></script>
   </body>
 </html>
