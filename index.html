@@ -7,9 +7,12 @@
     <style>
       body{
         background-color: rgb(127, 255, 206);
+        background-image: url("background.jpg");
+        background-size: 100%;
       }
       h1{
         text-align: center;
+
       }
       .container{
         background-color: black;
@@ -57,6 +60,17 @@
         margin: 40px;
         margin-left: 65px;
       }
+      .sign{
+        height: 70%;
+        width: 50%;
+        margin-top: 10%;
+        
+      }
+      .control{
+        background-color: white;
+        height: 10%;
+      }
+      
     </style>
   </head>
   <body>
@@ -64,19 +78,19 @@
     <div class="container">
        <div id= "checks"></div>
     
-       <div class="button" id="plusNormalTime">+</div>
+       <div class="button" id="plusNormalTime"><img  class ="sign" src="plus.png" alt="Plus"></div>
        <div class="miniDisplay" id="setTime">25</div>
-       <div class="button" id="minusNormalTime">-</div>
+       <div class="button" id="minusNormalTime"><img  class ="sign" src="minus.png" alt="Minus"></div>
     
-       <div class="button" id="plusBreakTime">+</div>
+       <div class="button" id="plusBreakTime"><img  class ="sign" src="plus.png" alt="Plus"></div>
        <div class="miniDisplay" id="setBreak">05</div>
-       <div class="button" id="minusBreakTime">-</div> 
+       <div class="button" id="minusBreakTime"><img  class ="sign" src="minus.png" alt="minus"></div> 
 
        <div class= "display">19:20</div>
 
-       <div class="button control" id="start">Start</div>
-       <div class="button control" id="stop">Stop</div>
-       <div class="button control" id="reset">Reset</div>
+       <div class="button control" id="start"><img  id ="start" src="play.png" alt="play"></div>
+       <div class="button control" id="stop"><img  id = "stop" src="pause.png" alt="stop"></div>
+       <div class="button control" id="reset"><img  id = "reset" src="stop.png" alt="reset"></div>
     </div>
     <script src="pomodoro.js"></script>
   </body>
