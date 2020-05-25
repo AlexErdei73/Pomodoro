@@ -9,6 +9,7 @@
         background: url("alarmclock.jpg")repeat-y center center fixed;
         background-size: cover;
         background-color: rgb(127, 255, 206);
+        background-image: url("background.jpg");
       }
       h1{
         text-align: center;
@@ -167,6 +168,9 @@
         margin: 0 20px;
         float: right;
       }
+      .control{
+        background-color: rgb(3, 165, 3);
+      }
     </style>
   </head>
   <body>
@@ -179,13 +183,13 @@
     </p>
     <div class="main">
       <div class="container">
-        <div class="button" id="plusNormalTime"><img  class ="sign" src="plus.png" alt="Plus"></div>
+        <div class="button" id="plusNormalTime">></div>
         <div class="miniDisplay" id="setTime">25</div>
-        <div class="button" id="minusNormalTime"><img  class ="sign" src="minus.png" alt="Minus"></div>
+        <div class="button" id="minusNormalTime"><</div>
      
-        <div class="button" id="plusBreakTime"><img  class ="sign" src="plus.png" alt="Plus"></div>
+        <div class="button" id="plusBreakTime">></div>
         <div class="miniDisplay" id="setBreak">05</div>
-        <div class="button" id="minusBreakTime"><img  class ="sign" src="minus.png" alt="Minus"></div> 
+        <div class="button" id="minusBreakTime"><</div> 
       </div>
       <div class="transparent"></div>
       <div class="container">
@@ -193,9 +197,15 @@
       </div>
       <div class="transparent"></div>
       <div class="container">   
-        <div class="button control" id="start">Start</div>
-        <div class="button control" id="stop">Stop</div>
-        <div class="button control" id="reset">Reset</div>
+        <div class="button control" id="start">
+          <img  id ="startbutton" src="play.png" alt="play">
+        </div>
+        <div class="button control" id="stop">
+          <img  id = "stopbutton" src="pause.png" alt="stop">
+        </div>
+        <div class="button control" id="reset">
+          <img  id = "resetbutton" src="stop.png" alt="reset">
+        </div>
       </div>
     </div>
     <ol>
