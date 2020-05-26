@@ -26,8 +26,9 @@ function formatTime(second){
 //count sessions and give back the right number of minutes for brake and work
 function switchToNextSession(){
     let second = 0;
-    
+    document.getElementById('sound').play();
     isBrakeSession = !isBrakeSession;
+    setDisplayColor();
     if(count == 4 && isBrakeSession){
          second = setClock(LONG_BRAKE);
          count = 1;
@@ -42,9 +43,9 @@ function switchToNextSession(){
             second = setClock(workMinutes);
         }
         return second;
-    }   
+    }    
 }
-
+ 
 function updateTime(){
     displaySecond--;
     if (displaySecond == 0) {
@@ -63,7 +64,7 @@ function setClock(minutes) {
 function btnStartPress(){
     console.log("start");
     if (!timer) {
-        timer = setInterval(updateTime, 1);
+        timer = setInterval(updateTime, 1000);
     } 
 }
 
@@ -134,6 +135,16 @@ function onClick (e){
     else{
     onBtnSetPress(e)
     }   
+}
+
+function setDisplayColor() {
+    const display = document.querySelector(".display");
+    if (isBrakeSession){
+        display.classList.add("break");
+    } else {
+        display.classList.remove("break");
+    }
+    console.log(display.classList);
 }
 
 //main program

@@ -49,6 +49,16 @@
         color: red;
         border-color: red;
         box-shadow: 5px 5px red;
+        margin: 5px;
+        margin-top: 25px;
+        margin-left: 10px;
+        box-shadow: none;
+      }
+      .down{
+        margin: 5px;
+        margin-top: 25px;
+        margin-left: 10px;
+        box-shadow: none;
       }
       .miniDisplay{
         color: red;
@@ -73,6 +83,10 @@
         margin-left: 40px;
         margin-top: 20px;
       }
+      .break{
+        color: white;
+        border-color: white;
+      }
       .control{
         width: 100px;
         margin: 30px;
@@ -87,6 +101,9 @@
         color: lime;
         border-color: lime;
         box-shadow:5px 5px lime;
+        margin: 30px;
+        margin-top: 20px;
+        margin-left: 20px;
       }
       #plusBreakTime{
         color: grey;
@@ -113,7 +130,7 @@
         border-color: white;
       }
       #plusNormalTime {
-        margin-left: 15px;
+        /*margin-left: 15px;*/
       }
       .transparent{
         display: block;
@@ -169,6 +186,7 @@
         margin: 0 20px;
         float: right;
       }
+      
             
 
     </style>
@@ -197,15 +215,11 @@
       </div>
       <div class="transparent"></div>
       <div class="container">   
-        <div class="button control" id="start">
-          <img  id ="startbutton" src="play.png" alt="play">
-        </div>
-        <div class="button control" id="stop">
-          <img  id = "stopbutton" src="pause.png" alt="stop">
-        </div>
-        <div class="button control" id="reset">
-          <img  id = "resetbutton" src="stop.png" alt="reset">
-        </div>
+        
+          <img  class="button control" id="start" src="play.png" alt="play">
+          <img  class="button control" id="stop" src="pause.png" alt="stop">
+          <img class="button control" id="reset" src="stop.png" alt="reset">
+        
       </div>
     </div>
     <ol>
@@ -222,6 +236,11 @@
         <a href="https://www.theodinproject.com/courses/web-development-101/lessons/pairing-project">Odin Project</a>
       </div>
       <div class="left">By Phankthusar and AlexErdei73</div>
+      <audio id = "sound" controls>
+        
+        <source src="ring.mp3" type="audio/mp3">
+      
+      </audio>
     </footer>
     <script src="pomodoro.js"></script>
   </body>
