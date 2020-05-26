@@ -147,6 +147,16 @@ function setDisplayColor() {
     console.log(display.classList);
 }
 
+function onButtonDown(e){
+    const button = e.target;
+    button.classList.add('down');
+}
+
+function onButtonUp(e){
+    const button = e.target;
+    button.classList.remove('down');
+}
+
 //main program
 let displaySecond = 0;
 let workMinutes = 25;
@@ -159,4 +169,7 @@ let timer;
 btnResetPress();
 
 const buttons = document.querySelectorAll('.button');
+const setButtons = document.querySelectorAll('.set');
 buttons.forEach(button => button.addEventListener('click', onClick));
+setButtons.forEach(button => button.addEventListener('mousedown', onButtonDown));
+setButtons.forEach(button => button.addEventListener('mouseup', onButtonUp));
