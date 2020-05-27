@@ -149,7 +149,7 @@ function setDisplayColor() {
 
 function onButtonDown(e){
     const button = e.target;
-    if (button.className == 'button control') {
+    if (button.classList.contains('control')) {
         button.classList.add('ctrlDown');
     } else {
         button.classList.add('down');
@@ -159,7 +159,7 @@ function onButtonDown(e){
 
 function onButtonUp(e){
     const button = e.target;
-    if (button.className == "button control ctrtlDown"){
+    if (button.classList.contains ("ctrtlDown")){
         button.classList.remove("ctrlDown")
     } else {
         button.classList.remove('down');
