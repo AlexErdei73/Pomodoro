@@ -127,9 +127,6 @@
         color: white;
         border-color: white;
       }
-      #plusNormalTime {
-        /*margin-left: 15px;*/
-      }
       .transparent{
         display: block;
         width: 495px;
@@ -141,7 +138,7 @@
       }
       p {
         display: block;
-        max-width: 500px;
+        max-width: 600px;
         margin: 30px 80px;
         margin-left: 0px;
         font-size: x-large;
@@ -155,7 +152,7 @@
       }
       ol {
         display: block;
-        max-width: 850px;
+        max-width: 750px;
         float: right;
         font-size: x-large;
         margin: 30px 60px;
@@ -178,13 +175,12 @@
       .left {
         border: 1px solid black;
         float: left;
+        clear: left;
       }
       .right {
         margin: 0 20px;
         float: right;
-      }
-      #sound{
-        box-shadow: 10px 10px white;
+        clear: left;
       }
     </style>
   </head>
@@ -195,7 +191,7 @@
       <source src="ring.mp3" type="audio/mp3">
     
     </audio>
-    <div class="main">
+    <div class="main">  
       <div class="container">
         <div class="button set" id="plusNormalTime">></div>
         <div class="miniDisplay" id="setTime">25</div>
