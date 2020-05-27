@@ -129,11 +129,11 @@ function onBtnSetPress(e){
 }
 
 function onClick (e){
-    if (e.target.className == "button control"){
-    onBtnControlPress(e)
+    if (e.target.classList.contains('control')){
+        onBtnControlPress(e);
     } 
     else{
-    onBtnSetPress(e)
+        onBtnSetPress(e);
     }   
 }
 
@@ -159,7 +159,7 @@ function onButtonDown(e){
 
 function onButtonUp(e){
     const button = e.target;
-    if (button.classList.contains ("ctrtlDown")){
+    if (button.classList.contains("control")){
         button.classList.remove("ctrlDown")
     } else {
         button.classList.remove('down');
