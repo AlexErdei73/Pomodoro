@@ -4,7 +4,7 @@ function convertToString(number){
     if (number < 10){
         dString = '0' + dString;
     }
-    return dString;
+    return dString; 
 }
 
 
@@ -149,12 +149,22 @@ function setDisplayColor() {
 
 function onButtonDown(e){
     const button = e.target;
-    button.classList.add('down');
+    if (button.className == 'button control') {
+        button.classList.add('ctrlDown');
+    } else {
+        button.classList.add('down');
+    }
+    button.style = 'box-shadow: none;';
 }
 
 function onButtonUp(e){
     const button = e.target;
-    button.classList.remove('down');
+    if (button.className == "button control ctrtlDown"){
+        button.classList.remove("ctrlDown")
+    } else {
+        button.classList.remove('down');
+    }
+    button.style = '';
 }
 
 //main program
@@ -169,7 +179,6 @@ let timer;
 btnResetPress();
 
 const buttons = document.querySelectorAll('.button');
-const setButtons = document.querySelectorAll('.set');
 buttons.forEach(button => button.addEventListener('click', onClick));
-setButtons.forEach(button => button.addEventListener('mousedown', onButtonDown));
-setButtons.forEach(button => button.addEventListener('mouseup', onButtonUp));
+buttons.forEach(button => button.addEventListener('mousedown', onButtonDown));
+buttons.forEach(button => button.addEventListener('mouseup', onButtonUp));
