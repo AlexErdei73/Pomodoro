@@ -1,0 +1,177 @@
+body{
+    background: url("assets/alarmclock.jpg")repeat-y center center fixed;
+    background-size: cover;
+    background-color: rgb(127, 255, 206);
+    background-image: url("assets/background.jpg");
+  }
+  h1{
+    text-align: center;
+    color: black;
+    text-shadow: 2px 2px white;
+  }
+  .container{
+    background-color: black;
+    color:  white ;
+    width: 495px;
+    margin: auto;
+    height: 100px;
+    border: 1px solid white;
+    text-align: center;
+    box-shadow: 5px 5px darkred;
+    border-radius: 5px;
+    float: left;
+    clear: right;
+  }
+  .button{
+    color: darkred;
+    font-size: 135%;
+    display: block;
+    width: 50px;
+    height: 50px;
+    margin: 10px;
+    margin-top: 20px;
+    margin-left: 5px;
+    border: 1px solid darkred;  
+    float: left;
+    text-align: center;
+    line-height: 50px;
+    box-shadow: 5px 5px darkred;
+    border-radius: 5px;
+  }
+  .button:hover{
+    color: red;
+    border-color: red; 
+    box-shadow: 5px 5px red;;
+  }
+  .down{
+    margin: 5px;
+    margin-top: 25px;
+    margin-left: 10px;
+  }
+  .miniDisplay{
+    color: red;
+    font-size: 150%;
+    display: block;
+    width: 100px;
+    height: 50px;
+    border: 1px solid red;
+    margin-top: 25px;
+    line-height: 50px;
+    float: left;
+  }
+  .display{
+    font-size: 280%;
+    display: block;
+    width: 400px;
+    height: 60px;
+    color: red;
+    border: 1px solid red;
+    float: left;
+    line-height: 60px;
+    margin-left: 40px;
+    margin-top: 20px;
+  }
+  .break{
+    color: white;
+    border-color: white;
+  }
+  .control{
+    width: 100px;
+    margin: 30px;
+    margin-top: 20px;
+    line-height: 50px;
+    color: black;
+    border-color: green;
+    box-shadow: 5px 5px green;
+    background-color: black;
+  }
+  .control:hover{
+    color: lime;
+    border-color: lime;
+    box-shadow:5px 5px lime;
+  }
+  .ctrlDown {
+    margin-top: 25px;
+    margin-left: 35px;
+    margin-right: 25px;
+    margin-bottom: 25px;
+  }
+  #plusBreakTime{
+    color: grey;
+    border-color: gray;
+    box-shadow: 5px 5px gray;
+  }
+  #plusBreakTime:hover{
+    color: white;
+    border-color: white;
+    box-shadow: 5px 5px white;
+  }
+  #minusBreakTime{
+    color: grey;
+    border-color: gray;
+    box-shadow: 5px 5px gray;
+  }
+  #minusBreakTime:hover{
+    color: white;
+    border-color: white;
+    box-shadow: 5px 5px white;
+  }
+  #setBreak{
+    color: white;
+    border-color: white;
+  }
+  .transparent{
+    display: block;
+    width: 495px;
+    height: 30px;
+    background: transparent;
+    margin: auto;
+    float: left;
+    clear: right;
+  }
+  p {
+    display: block;
+    max-width: 600px;
+    margin: 30px 80px;
+    margin-left: 0px;
+    font-size: x-large;
+    float: left;
+    text-shadow: 1px 1px white;
+  }
+  .main {
+    display: block;
+    width: 497px;
+    margin: auto;
+  }
+  ol {
+    display: block;
+    max-width: 750px;
+    float: right;
+    font-size: x-large;
+    margin: 30px 60px;
+    text-shadow: 1px 1px white;
+  }
+  footer {
+    display: block;
+    width: 100%;
+    font-size: x-large;
+    clear: right;
+    text-shadow: 1px 1px white;
+  }
+  a {
+    color: darkred;
+    text-decoration: none;
+  }
+  a:hover{
+    color: red;
+  }
+  .left {
+    border: 1px solid black;
+    float: left;
+    clear: left;
+  }
+  .right {
+    margin: 0 20px;
+    float: right;
+    clear: left;
+  }
